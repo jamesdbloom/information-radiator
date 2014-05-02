@@ -23,5 +23,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2014 James D Bloom  
+Copyright (c) 2014 [James D Bloom](http://blog.jamesdbloom.com)  
 Licensed under the MIT license.
