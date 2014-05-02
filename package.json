@@ -1,0 +1,38 @@
+{
+  "name": "information-radiator",
+  "description": "Information radiator to clearly visualize continous delivery pipelines",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jamesdbloom/information-radiator",
+  "author": {
+    "name": "James D Bloom",
+    "email": "jamesdbloom@gmail.com",
+    "url": "http://blog.jamesdbloom.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jamesdbloom/information-radiator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jamesdbloom/information-radiator/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jamesdbloom/information-radiator/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/information-radiator",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.4"
+  },
+  "keywords": []
+}
