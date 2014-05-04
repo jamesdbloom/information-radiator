@@ -1,4 +1,5 @@
-# information-radiator [![Build Status](https://secure.travis-ci.org/jamesdbloom/information-radiator.png?branch=master)](http://travis-ci.org/jamesdbloom/information-radiator)
+# information-radiator [![Build Status](https://secure.travis-ci.org/jamesdbloom/information-radiator.png?branch=master)](http://travis-ci.org/jamesdbloom/information-radiator) [![Dependency Status](https://david-dm.org/jamesdbloom/information-radiator.png)](https://david-dm.org/jamesdbloom/information-radiator) [![devDependency Status](https://david-dm.org/jamesdbloom/information-radiator/dev-status.png)](https://david-dm.org/jamesdbloom/information-radiator#info=devDependencies) [![Code Climate](https://codeclimate.com/github/jamesdbloom/information-radiator.png)](https://codeclimate.com/github/jamesdbloom/information-radiator)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jamesdbloom/information-radiator/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Stories in Backlog](https://badge.waffle.io/jamesdbloom/information-radiator.png?label=backlog&title=Backlog)](https://waffle.io/jamesdbloom/information-radiator)
 
 Information radiator to clearly visualize continous delivery pipelines
 
