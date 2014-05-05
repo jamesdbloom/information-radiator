@@ -184,15 +184,15 @@ The basic structure of the configuration is as follows:
                     stages: [
                         {
                             url: 'http://127.0.0.1:9090/example.json', // url to fetch json from
-                            path: 'build.number', // simple field to read from json
+                            path: '...', // simple field to read from json
                             link: 'http://127.0.0.1:9090' // optional - causes browser to navigate to this URL when the stage is clicked
                         },
                         {
-                            url: 'http://127.0.0.1:9090/info.json?json', // url to fetch json from
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}', // complex expression to read from json
+                            url: 'http://127.0.0.1:9090/info?json', // url to fetch json from
+                            expression: '${...} ${...}', // complex expression to read from json
                             condition: {  // additional condition to trigger success or failure state
-                                expression: '${Application.Project-Artifact-Id}',  // complex expression (for simple field access use \'path\' instead)
-                                value: 'evolve' // value to match
+                                expression: '${...} ${...}',  // complex expression (for simple field access use \'path\' instead)
+                                value: '...' // value to match
                             }
                         },
                         ...
