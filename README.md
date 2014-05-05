@@ -28,9 +28,9 @@ information_radiator.run(
                 {
                     stages: [
                         {
-                            url: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild/api/json',
+                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
                             path: 'number',
-                            link: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild',
+                            link: 'http://build.server.com/job/ms/lastSuccessfulBuild',
                             condition: {
                                 path: 'result',
                                 value: 'SUCCESS'
@@ -38,7 +38,7 @@ information_radiator.run(
                         },
                         {
                             url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}',
+                            expression: '${project.id} ${project.version} ${build.number}',
                             link: 'http://dev.jamesdbloom.com'
                         }
                     ]
@@ -55,7 +55,7 @@ For more details on the format of the configuration see below...
 
 This module can be used to create an information radiator to clearly visualize your continuous delivery pipelines.  A typical screen might look as follows:
 
-![Example Build Pipeline](docs/images/build_pipeline_screenshot.png)
+![Example Build Pipeline](https://github.com/jamesdbloom/information-radiator/raw/master/docs/images/build_pipeline_screenshot.png)
 
 All aspects of this screen are configurable.  The configuration used to build this screen is as follows:
 
@@ -72,9 +72,9 @@ require('information-radiator').run({
                 {
                     stages: [
                         {
-                            url: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild/api/json',
+                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
                             path: 'number',
-                            link: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild',
+                            link: 'http://build.server.com/job/ms/lastSuccessfulBuild',
                             condition: {
                                 path: 'result',
                                 value: 'SUCCESS'
@@ -82,7 +82,7 @@ require('information-radiator').run({
                         },
                         {
                             url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}',
+                            expression: '${project.id} ${project.version} ${build.number}',
                             condition: {
                                 expression: '${Application.Project-Artifact-Id}',
                                 value: 'evolve'
@@ -91,17 +91,17 @@ require('information-radiator').run({
                         },
                         {
                             url: 'http://qa.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}',
+                            expression: '${project.id} ${project.version} ${build.number}',
                             link: 'http://qa.jamesdbloom.com'
                         },
                         {
                             url: 'http://uat.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}',
+                            expression: '${project.id} ${project.version} ${build.number}',
                             link: 'http://uat.jamesdbloom.com/info.json?json'
                         },
                         {
                             url: 'http://prod.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}',
+                            expression: '${project.id} ${project.version} ${build.number}',
                             link: 'http://prod.jamesdbloom.com/info.json?json'
                         }
                     ]
@@ -109,9 +109,9 @@ require('information-radiator').run({
                 {
                     stages: [
                         {
-                            url: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild/api/json',
+                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
                             path: 'number',
-                            link: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild',
+                            link: 'http://build.server.com/job/ms/lastSuccessfulBuild',
                             condition: {
                                 path: 'result',
                                 value: 'SUCCESS'
@@ -119,7 +119,7 @@ require('information-radiator').run({
                         },
                         {
                             url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}',
+                            expression: '${project.id} ${project.version} ${build.number}',
                             condition: {
                                 expression: '${Application.Project-Artifact-Id}',
                                 value: 'evolve'
@@ -127,15 +127,15 @@ require('information-radiator').run({
                         },
                         {
                             url: 'http://qa.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}'
+                            expression: '${project.id} ${project.version} ${build.number}'
                         },
                         {
                             url: 'http://uat.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}'
+                            expression: '${project.id} ${project.version} ${build.number}'
                         },
                         {
                             url: 'http://prod.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}'
+                            expression: '${project.id} ${project.version} ${build.number}'
                         }
                     ]
                 }
@@ -148,7 +148,7 @@ require('information-radiator').run({
                 {
                     stages: [
                         {
-                            url: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild/api/json',
+                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
                             path: 'number',
                             condition: {
                                 path: 'result',
@@ -157,7 +157,7 @@ require('information-radiator').run({
                         },
                         {
                             url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}',
+                            expression: '${project.id} ${project.version} ${build.number}',
                             condition: {
                                 expression: '${Application.Project-Artifact-Id}',
                                 value: 'evolve'
@@ -165,18 +165,18 @@ require('information-radiator').run({
                         },
                         {
                             url: 'http://qa.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}'
+                            expression: '${project.id} ${project.version} ${build.number}'
                         },
                         {
                             url: 'http://uat.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}'
+                            expression: '${project.id} ${project.version} ${build.number}'
                         }
                     ]
                 },
                 {
                     stages: [
                         {
-                            url: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild/api/json',
+                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
                             path: 'number',
                             condition: {
                                 path: 'result',
@@ -185,7 +185,7 @@ require('information-radiator').run({
                         },
                         {
                             url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}',
+                            expression: '${project.id} ${project.version} ${build.number}',
                             condition: {
                                 expression: '${Application.Project-Artifact-Id}',
                                 value: 'evolve'
@@ -193,11 +193,11 @@ require('information-radiator').run({
                         },
                         {
                             url: 'http://qa.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}'
+                            expression: '${project.id} ${project.version} ${build.number}'
                         },
                         {
                             url: 'http://uat.jamesdbloom.com/info.json?json',
-                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}'
+                            expression: '${project.id} ${project.version} ${build.number}'
                         }
                     ]
                 }
@@ -213,40 +213,55 @@ require('information-radiator').run({
 The basic structure of the configuration is as follows:
 
 {
-    port: 8080, // the port to run the server on
-    pollPeriod: 10, // how often in seconds should stages be polled
-    refresh: true, // should refresh button be shown
+    // the port to run the server on
+    port: 8080,
+    // how often in seconds should stages be polled
+    pollPeriod: 10,
+    // should refresh button be shown
+    refresh: true,
     title: "Main Page Title",
     groups: [
         {
             name: "pipeline group name",
+            // header for each stage
             headers: ['stage one header', 'stage two header', ...],
             pipelines: [
                 {
                     stages: [
                         {
-                            url: 'http://127.0.0.1:9090/example.json', // url to fetch json from
-                            path: '...', // simple field to read from json
-                            link: 'http://127.0.0.1:9090' // optional - causes browser to navigate to this url when the stage is clicked
+                            // url to fetch json from
+                            url: 'http://127.0.0.1:9090/example.json',
+                            // simple field to read from json
+                            path: '...',
+                            // causes browser to navigate to this url when the stage is clicked
+                            link: 'http://127.0.0.1:9090'
                         },
                         {
-                            url: 'http://127.0.0.1:9090/info?json', // url to fetch json from
-                            expression: '${...} ${...}', // complex expression to read from json
-                            condition: {  // additional condition to trigger success or failure state
-                                expression: '${...} ${...}',  // complex expression (for simple field access use \'path\' instead)
-                                value: '...' // value to match
+                            // url to fetch json from
+                            url: 'http://127.0.0.1:9090/info?json',
+                            // complex expression to read from json
+                            expression: '${...} ${...}',
+                            // additional condition to trigger success or failure state
+                            condition: {
+                                // complex expression (for simple field access use \'path\' instead)
+                                expression: '${...} ${...}',
+                                // value to match
+                                value: '...'
                             }
                         },
                         ...
                     ]
                 },
-                ... // another pipeline with an identical lists of stages (they share the same set of headers)
+                // another pipeline with the same stages (sharing same set of headers)
+                ...
             ]
         },
-        ... // another pipeline group with a new type of pipeline (it has a different set of stages and headers)
+        // another new type of pipeline group (different stage headers)
+        ...
     ]
 }
 ```
+
 #### port
 Type: `Integer`
 Default value: `8080`
@@ -354,6 +369,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
  * 2014-06-05   v0.1.0   Released information-radiator module
+ * 2014-06-06   v0.1.1   Improving documentation
 
 ## License
 Copyright (c) 2014 [James D Bloom](http://blog.jamesdbloom.com)  
