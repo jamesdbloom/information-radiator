@@ -168,6 +168,7 @@ require('information-radiator').run({
 
 ### Options
 
+```javascript
 The basic structure of the configuration is as follows:
 
 {
@@ -203,6 +204,7 @@ The basic structure of the configuration is as follows:
         ... // another pipeline group with a new type of pipeline (it has a different set of stages and headers)
     ]
 }
+```
 
 #### pollPeriod
 Type: `Integer`
