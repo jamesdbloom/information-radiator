@@ -1,5 +1,6 @@
 require('./lib/information-radiator').run({
-    pollPeriod: 500,
+    port: 8080,
+    pollPeriod: 5,
     refresh: true,
     title: "Build Pipeline",
     groups: [

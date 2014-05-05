@@ -213,6 +213,7 @@ require('information-radiator').run({
 The basic structure of the configuration is as follows:
 
 {
+    port: 8080, // the port to run the server on
     pollPeriod: 10, // how often in seconds should stages be polled
     refresh: true, // should refresh button be shown
     title: "Main Page Title",
@@ -246,10 +247,15 @@ The basic structure of the configuration is as follows:
     ]
 }
 ```
+#### port
+Type: `Integer`
+Default value: `8080`
+
+This value specifies the port to run the server on.
 
 #### pollPeriod
 Type: `Integer`
-Default value: `5`
+Default value: `10`
 
 This value specifies how often the stages should be polled to retrieve there status.
 
@@ -347,7 +353,7 @@ This value specifies a url that turns the box representing the box into a link t
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+ * 2014-06-05   v0.1.0   Released information-radiator module
 
 ## License
 Copyright (c) 2014 [James D Bloom](http://blog.jamesdbloom.com)  
