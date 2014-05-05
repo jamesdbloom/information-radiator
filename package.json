@@ -1,7 +1,7 @@
 {
   "name": "information-radiator",
   "description": "Information radiator to clearly visualize continous delivery pipelines",
-  "version": "0.1.0",
+    "version": "0.1.2",
   "homepage": "https://github.com/jamesdbloom/information-radiator",
   "author": {
     "name": "James D Bloom",

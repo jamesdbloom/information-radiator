@@ -19,33 +19,33 @@ information_radiator.run();
 var information_radiator = require('information-radiator');
 information_radiator.run(
 {
-    title: "Main Page Title",
-    groups: [
+  title: "Main Page Title",
+  groups: [
+    {
+      name: "pipeline group name",
+      headers: ['stage one header', 'stage two header'],
+      pipelines: [
         {
-            name: "pipeline group name",
-            headers: ['stage one header', 'stage two header'],
-            pipelines: [
-                {
-                    stages: [
-                        {
-                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
-                            path: 'number',
-                            link: 'http://build.server.com/job/ms/lastSuccessfulBuild',
-                            condition: {
-                                path: 'result',
-                                value: 'SUCCESS'
-                            }
-                        },
-                        {
-                            url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}',
-                            link: 'http://dev.jamesdbloom.com'
-                        }
-                    ]
-                }
-            ]
+          stages: [
+            {
+              url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
+              path: 'number',
+              link: 'http://build.server.com/job/ms/lastSuccessfulBuild',
+              condition: {
+                path: 'result',
+                value: 'SUCCESS'
+              }
+            },
+            {
+              url: 'http://dev.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}',
+              link: 'http://dev.jamesdbloom.com'
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 });
 ```
 
@@ -61,149 +61,149 @@ All aspects of this screen are configurable.  The configuration used to build th
 
 ```javascript
 require('information-radiator').run({
-    pollPeriod: 60,
-    refresh: true,
-    title: "Build Pipeline",
-    groups: [
+  pollPeriod: 60,
+  refresh: true,
+  title: "Build Pipeline",
+  groups: [
+    {
+      name: "front-end",
+      headers: ['build', 'development', 'qa', 'uat', 'production'],
+      pipelines: [
         {
-            name: "front-end",
-            headers: ['build', 'development', 'qa', 'uat', 'production'],
-            pipelines: [
-                {
-                    stages: [
-                        {
-                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
-                            path: 'number',
-                            link: 'http://build.server.com/job/ms/lastSuccessfulBuild',
-                            condition: {
-                                path: 'result',
-                                value: 'SUCCESS'
-                            }
-                        },
-                        {
-                            url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}',
-                            condition: {
-                                expression: '${Application.Project-Artifact-Id}',
-                                value: 'evolve'
-                            },
-                            link: 'http://dev.jamesdbloom.com'
-                        },
-                        {
-                            url: 'http://qa.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}',
-                            link: 'http://qa.jamesdbloom.com'
-                        },
-                        {
-                            url: 'http://uat.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}',
-                            link: 'http://uat.jamesdbloom.com/info.json?json'
-                        },
-                        {
-                            url: 'http://prod.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}',
-                            link: 'http://prod.jamesdbloom.com/info.json?json'
-                        }
-                    ]
-                },
-                {
-                    stages: [
-                        {
-                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
-                            path: 'number',
-                            link: 'http://build.server.com/job/ms/lastSuccessfulBuild',
-                            condition: {
-                                path: 'result',
-                                value: 'SUCCESS'
-                            }
-                        },
-                        {
-                            url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}',
-                            condition: {
-                                expression: '${Application.Project-Artifact-Id}',
-                                value: 'evolve'
-                            }
-                        },
-                        {
-                            url: 'http://qa.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}'
-                        },
-                        {
-                            url: 'http://uat.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}'
-                        },
-                        {
-                            url: 'http://prod.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}'
-                        }
-                    ]
-                }
-            ]
+          stages: [
+            {
+              url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
+              path: 'number',
+              link: 'http://build.server.com/job/ms/lastSuccessfulBuild',
+              condition: {
+                path: 'result',
+                value: 'SUCCESS'
+              }
+            },
+            {
+              url: 'http://dev.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}',
+              condition: {
+                expression: '${Application.Project-Artifact-Id}',
+                value: 'evolve'
+              },
+              link: 'http://dev.jamesdbloom.com'
+            },
+            {
+              url: 'http://qa.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}',
+              link: 'http://qa.jamesdbloom.com'
+            },
+            {
+              url: 'http://uat.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}',
+              link: 'http://uat.jamesdbloom.com/info.json?json'
+            },
+            {
+              url: 'http://prod.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}',
+              link: 'http://prod.jamesdbloom.com/info.json?json'
+            }
+          ]
         },
         {
-            name: "back-end",
-            headers: ['build', 'development', 'qa', 'uat'],
-            pipelines: [
-                {
-                    stages: [
-                        {
-                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
-                            path: 'number',
-                            condition: {
-                                path: 'result',
-                                value: 'SUCCESS'
-                            }
-                        },
-                        {
-                            url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}',
-                            condition: {
-                                expression: '${Application.Project-Artifact-Id}',
-                                value: 'evolve'
-                            }
-                        },
-                        {
-                            url: 'http://qa.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}'
-                        },
-                        {
-                            url: 'http://uat.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}'
-                        }
-                    ]
-                },
-                {
-                    stages: [
-                        {
-                            url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
-                            path: 'number',
-                            condition: {
-                                path: 'result',
-                                value: 'SUCCESS'
-                            }
-                        },
-                        {
-                            url: 'http://dev.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}',
-                            condition: {
-                                expression: '${Application.Project-Artifact-Id}',
-                                value: 'evolve'
-                            }
-                        },
-                        {
-                            url: 'http://qa.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}'
-                        },
-                        {
-                            url: 'http://uat.jamesdbloom.com/info.json?json',
-                            expression: '${project.id} ${project.version} ${build.number}'
-                        }
-                    ]
-                }
-            ]
+          stages: [
+            {
+              url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
+              path: 'number',
+              link: 'http://build.server.com/job/ms/lastSuccessfulBuild',
+              condition: {
+                path: 'result',
+                value: 'SUCCESS'
+              }
+            },
+            {
+              url: 'http://dev.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}',
+              condition: {
+                expression: '${Application.Project-Artifact-Id}',
+                value: 'evolve'
+              }
+            },
+            {
+              url: 'http://qa.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}'
+            },
+            {
+              url: 'http://uat.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}'
+            },
+            {
+              url: 'http://prod.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}'
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      name: "back-end",
+      headers: ['build', 'development', 'qa', 'uat'],
+      pipelines: [
+        {
+          stages: [
+            {
+              url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
+              path: 'number',
+              condition: {
+                path: 'result',
+                value: 'SUCCESS'
+              }
+            },
+            {
+              url: 'http://dev.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}',
+              condition: {
+                expression: '${Application.Project-Artifact-Id}',
+                value: 'evolve'
+              }
+            },
+            {
+              url: 'http://qa.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}'
+            },
+            {
+              url: 'http://uat.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}'
+            }
+          ]
+        },
+        {
+          stages: [
+            {
+              url: 'http://build.server.com/job/ms/lastSuccessfulBuild/api/json',
+              path: 'number',
+              condition: {
+                path: 'result',
+                value: 'SUCCESS'
+              }
+            },
+            {
+              url: 'http://dev.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}',
+              condition: {
+                expression: '${Application.Project-Artifact-Id}',
+                value: 'evolve'
+              }
+            },
+            {
+              url: 'http://qa.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}'
+            },
+            {
+              url: 'http://uat.jamesdbloom.com/info.json?json',
+              expression: '${project.id} ${project.version} ${build.number}'
+            }
+          ]
+        }
+      ]
+    }
+  ]
 });
 ```
 
@@ -213,52 +213,52 @@ require('information-radiator').run({
 The basic structure of the configuration is as follows:
 
 {
-    // the port to run the server on
-    port: 8080,
-    // how often in seconds should stages be polled
-    pollPeriod: 10,
-    // should refresh button be shown
-    refresh: true,
-    title: "Main Page Title",
-    groups: [
+  // the port to run the server on
+  port: 8080,
+  // how often in seconds should stages be polled
+  pollPeriod: 10,
+  // should refresh button be shown
+  refresh: true,
+  title: "Main Page Title",
+  groups: [
+    {
+      name: "pipeline group name",
+      // header for each stage
+      headers: ['stage one header', 'stage two header', ...],
+      pipelines: [
         {
-            name: "pipeline group name",
-            // header for each stage
-            headers: ['stage one header', 'stage two header', ...],
-            pipelines: [
-                {
-                    stages: [
-                        {
-                            // url to fetch json from
-                            url: 'http://127.0.0.1:9090/example.json',
-                            // simple field to read from json
-                            path: '...',
-                            // causes browser to navigate to this url when the stage is clicked
-                            link: 'http://127.0.0.1:9090'
-                        },
-                        {
-                            // url to fetch json from
-                            url: 'http://127.0.0.1:9090/info?json',
-                            // complex expression to read from json
-                            expression: '${...} ${...}',
-                            // additional condition to trigger success or failure state
-                            condition: {
-                                // complex expression (for simple field access use \'path\' instead)
-                                expression: '${...} ${...}',
-                                // value to match
-                                value: '...'
-                            }
-                        },
-                        ...
-                    ]
-                },
-                // another pipeline with the same stages (sharing same set of headers)
-                ...
-            ]
+          stages: [
+            {
+              // url to fetch json from
+              url: 'http://127.0.0.1:9090/example.json',
+              // simple field to read from json
+              path: '...',
+              // causes browser to navigate to this url when the stage is clicked
+              link: 'http://127.0.0.1:9090'
+            },
+            {
+              // url to fetch json from
+              url: 'http://127.0.0.1:9090/info?json',
+              // complex expression to read from json
+              expression: '${...} ${...}',
+              // additional condition to trigger success or failure state
+              condition: {
+                // complex expression (for simple field access use \'path\' instead)
+                expression: '${...} ${...}',
+                // value to match
+                value: '...'
+              }
+            },
+            ...
+          ]
         },
-        // another new type of pipeline group (different stage headers)
+        // another pipeline with the same stages (sharing same set of headers)
         ...
-    ]
+      ]
+    },
+    // another new type of pipeline group (different stage headers)
+    ...
+  ]
 }
 ```
 
@@ -370,6 +370,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
  * 2014-06-05   v0.1.0   Released information-radiator module
  * 2014-06-06   v0.1.1   Improving documentation
+ * 2014-06-06   v0.1.2   Improving documentation
 
 ## License
 Copyright (c) 2014 [James D Bloom](http://blog.jamesdbloom.com)  
