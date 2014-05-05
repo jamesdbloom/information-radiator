@@ -4,12 +4,53 @@
 Information radiator to clearly visualize continuous delivery pipelines
 
 ## Getting Started
-Install the module with: `npm install information-radiator`
+1. Install the module with: `npm install information-radiator`
+
+2.a Provide configuration in a file called `./config.json` and add the following code:
 
 ```javascript
 var information_radiator = require('information-radiator');
-information_radiator.awesome(); // "awesome"
+information_radiator.run();
 ```
+
+2.b Or provide configuration as a parameter to the `run()` method as follows:
+
+ ```javascript
+var information_radiator = require('information-radiator');
+information_radiator.run(
+{
+    title: "Main Page Title",
+    groups: [
+        {
+            name: "pipeline group name",
+            headers: ['stage one header', 'stage two header'],
+            pipelines: [
+                {
+                    stages: [
+                        {
+                            url: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild/api/json',
+                            path: 'number',
+                            link: 'http://jenkins.jamesdbloom.com/job/mockserver/lastSuccessfulBuild',
+                            condition: {
+                                path: 'result',
+                                value: 'SUCCESS'
+                            }
+                        },
+                        {
+                            url: 'http://dev.jamesdbloom.com/info.json?json',
+                            expression: '${Application.Project-Artifact-Id} ${Application.Project-Version} ${Application.Jenkins-Build-Number}',
+                            link: 'http://dev.jamesdbloom.com'
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+});
+ ```
+
+For more details on the format of the configuration see below...
+
 ### Overview
 
 This module can be used to create an information radiator to clearly visualize your continuous delivery pipelines.  A typical screen might look as follows:
@@ -185,7 +226,7 @@ The basic structure of the configuration is as follows:
                         {
                             url: 'http://127.0.0.1:9090/example.json', // url to fetch json from
                             path: '...', // simple field to read from json
-                            link: 'http://127.0.0.1:9090' // optional - causes browser to navigate to this URL when the stage is clicked
+                            link: 'http://127.0.0.1:9090' // optional - causes browser to navigate to this url when the stage is clicked
                         },
                         {
                             url: 'http://127.0.0.1:9090/info?json', // url to fetch json from
@@ -264,19 +305,19 @@ This value specifies the url to fetch JSON data from.
 Type: `String`
 Default value: ``
 
-This value specifies a simple field path to retrieve a value from a JSON response.  The retrieved value is then displayed in the box representing the stage.  When a stage fails then the previous successful value is also displayed in the box.  Either path or expression can be used to retrieve a the value that is displayed, however if both are specified path will take precedence and expression will be ignored.
+This value specifies a simple field path to retrieve a value from a JSON response.  The retrieved value is then displayed in the box representing the stage.  When a stage fails then the previous successful value is also displayed in the box.  Either *path* or *expression* can be used to retrieve a the value that is displayed, however if both are specified path will take precedence and expression will be ignored.
 
 #### groups[i].pipelines[i].stages[i].expression
 Type: `String`
 Default value: ``
 
-This value specifies a complex expression to retrieve one or more values from a JSON response.  The expression can contain any string, where each *${...}* value is replace with the corresponding value read from the json.  Nested *${...}* are not supported.  The retrieved value is then displayed in the box representing the stage.  When a stage fails then the previous successful value is also displayed in the box.  Either path or expression can be used to retrieve a the value that is displayed, however if both are specified path will take precedence and expression will be ignored.
+This value specifies a complex expression to retrieve one or more values from a JSON response.  The expression can contain any string, where each *${...}* value is replace with the corresponding value read from the json.  Nested *${...}* are not supported.  The retrieved value is then displayed in the box representing the stage.  When a stage fails then the previous successful value is also displayed in the box.  Either *path* or *expression* can be used to retrieve a the value that is displayed, however if both are specified path will take precedence and expression will be ignored.
 
 #### groups[i].pipelines[i].stages[i].condition
 Type: `String`
 Default value: ``
 
-This value specifies a condition to determine whether a stage is passing or failing.  The condition can be specified using either a path or expression and a value to match against.  In addition to the condition specified a section will go orange if an empty body is received from the URL or red if an error state is returned such as 404, 500 or an illegally formatted response.
+This value specifies a condition to determine whether a stage is passing or failing.  The condition can be specified using either a path or expression and a value to match against.  In addition to the condition specified a section will go orange if an empty body is received from the url or red if an error state is returned such as 404, 500 or an illegally formatted response.
 
 #### groups[i].pipelines[i].stages[i].condition.path
 Type: `String`
