@@ -4,18 +4,18 @@
 Information radiator to clearly visualize continuous delivery pipelines
 
 ## Getting Started
-1. Install the module with: `npm install information-radiator`
+- Install the module with: `npm install information-radiator`
 
-2.a Provide configuration in a file called `./config.json` and add the following code:
+- Provide configuration in a file called `./config.json` and add the following code:
 
 ```javascript
 var information_radiator = require('information-radiator');
 information_radiator.run();
 ```
 
-2.b Or provide configuration as a parameter to the `run()` method as follows:
+- Or provide configuration as a parameter to the `run()` method as follows:
 
- ```javascript
+```javascript
 var information_radiator = require('information-radiator');
 information_radiator.run(
 {
@@ -47,11 +47,11 @@ information_radiator.run(
         }
     ]
 });
- ```
+```
 
 For more details on the format of the configuration see below...
 
-### Overview
+## Overview
 
 This module can be used to create an information radiator to clearly visualize your continuous delivery pipelines.  A typical screen might look as follows:
 
@@ -207,7 +207,7 @@ require('information-radiator').run({
 });
 ```
 
-### Options
+## Configuration
 
 ```javascript
 The basic structure of the configuration is as follows:
