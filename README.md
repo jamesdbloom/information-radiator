@@ -12,10 +12,13 @@ information_radiator.awesome(); // "awesome"
 ```
 
 ## Documentation
-_(Coming soon)_
+
+**Extremely new project so documentation not ready yet.... what this space, expected by 15th May 2014**
 
 ## Examples
-_(Coming soon)_
+
+**Extremely new project so documentation not ready yet.... what this space, expected by 15th May 2014**
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
