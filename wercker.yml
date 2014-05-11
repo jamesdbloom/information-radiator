@@ -5,7 +5,7 @@ build:
     - npm-install
     - wercker/grunt@0.0.9
     - grunt:
-        tasks: test
+        tasks: jshint nodeunit
     - script:
         name: echo nodejs information
         code: |
