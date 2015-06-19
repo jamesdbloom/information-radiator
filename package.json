@@ -29,15 +29,15 @@
     "test": "grunt nodeunit"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.10",
-    "grunt-contrib-nodeunit": "~0.3",
-    "grunt-contrib-watch": "~0.6",
-    "grunt": "~0.4.4"
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt": "^0.4.5"
   },
   "keywords": [],
   "dependencies": {
-    "jquery": "~2.1",
-    "nconf": "^0.6.9",
-    "underscore": "^1.6.0"
+    "jquery": "^2.1.4",
+    "nconf": "^0.7.1",
+    "underscore": "^1.8.3"
   }
 }
