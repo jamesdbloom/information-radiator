@@ -377,3 +377,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## License
 Copyright (c) 2014 [James D Bloom](http://blog.jamesdbloom.com)  
 Licensed under the MIT license.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jamesdbloom/information-radiator/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
