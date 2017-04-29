@@ -147,10 +147,10 @@ function randomNumber(length) {
 }
 
 // simple test server used for development and unit tests
-require('http').createServer(function (req, res) {
-    var uri = require('url').parse(req.url).path,
-        response = {},
-        statusCode = 200;
+require('http').createServer((req, res) => {
+    var uri = require('url').parse(req.url).path;
+    var response = {};
+    var statusCode = 200;
 
     console.log("Test server received request: " + uri);
     if (uri === '/example.json' && req.method == 'GET') {
