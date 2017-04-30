@@ -373,7 +373,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
  * 2014-06-05   v0.1.0   Released information-radiator module
  * 2014-06-06   v0.1.1   Improving documentation
  * 2014-06-06   v0.1.2   Improving documentation
+ * 2017-04-30   v0.1.3   Updated build server
 
-## License
-Copyright (c) 2014 [James D Bloom](http://blog.jamesdbloom.com)  
-Licensed under the MIT license.
+---
+
+Task submitted by [James D Bloom](http://blog.jamesdbloom.com)

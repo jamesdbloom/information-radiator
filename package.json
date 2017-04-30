@@ -1,7 +1,7 @@
 {
   "name": "information-radiator",
   "description": "Information radiator to clearly visualize continous delivery pipelines",
-    "version": "0.1.2",
+    "version": "0.1.3",
   "homepage": "https://github.com/jamesdbloom/information-radiator",
   "author": {
     "name": "James D Bloom",
@@ -15,12 +15,7 @@
   "bugs": {
     "url": "https://github.com/jamesdbloom/information-radiator/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jamesdbloom/information-radiator/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "Apache-2.0",
   "main": "lib/information-radiator",
   "engines": {
     "node": ">= 0.8.0"
