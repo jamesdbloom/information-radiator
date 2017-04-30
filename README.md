@@ -1,7 +1,7 @@
 # information-radiator 
 [![Build Status](https://secure.travis-ci.org/jamesdbloom/information-radiator.png?branch=master)](http://travis-ci.org/jamesdbloom/information-radiator) [![Dependency Status](https://david-dm.org/jamesdbloom/information-radiator.png)](https://david-dm.org/jamesdbloom/information-radiator) [![devDependency Status](https://david-dm.org/jamesdbloom/information-radiator/dev-status.png)](https://david-dm.org/jamesdbloom/information-radiator#info=devDependencies) [![Code Climate](https://codeclimate.com/github/jamesdbloom/information-radiator.png)](https://codeclimate.com/github/jamesdbloom/information-radiator) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jamesdbloom/information-radiator/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Stories in Backlog](https://badge.waffle.io/jamesdbloom/information-radiator.png?label=backlog&title=Backlog)](https://waffle.io/jamesdbloom/information-radiator)
 
-[![NPM](https://nodei.co/npm/information-radiator.png?downloads=true&stars=true)](https://nodei.co/npm/information-radiator/) [![wercker status](https://app.wercker.com/status/4286a79128c8028f53dd9c19ec509bd0/m/ "wercker status")](https://app.wercker.com/project/bykey/4286a79128c8028f53dd9c19ec509bd0)
+[![NPM](https://nodei.co/npm/information-radiator.png?downloads=true&stars=true)](https://nodei.co/npm/information-radiator/)
 
 Information radiator to clearly visualize continuous delivery pipelines
 
