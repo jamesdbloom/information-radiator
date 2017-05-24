@@ -23,7 +23,7 @@
  */
 
 exports['information_radiator'] = {
-    setUp: function (done) {
+    setUp(done) {
         // setup here
         done();
     },
