@@ -31,7 +31,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "jquery": "~2.1",
+    "jquery": "~3.4",
     "nconf": "~0.8",
     "underscore": "~1.8"
   }
